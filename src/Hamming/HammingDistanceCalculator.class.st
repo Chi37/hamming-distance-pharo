@@ -1,3 +1,20 @@
+"
+I represent a hamming distance calculator. Currently, I take two DNA strands (as strings) that is the same size and count the differences in each index of the strings.
+
+
+
+- HammingDistanceCalculator new; calculateHDBetween: 'abcde' and: 'bbede'
+	>> 2  
+
+
+    Instance Variables
+	hammingDistance:		<Object>
+	stringOne:		<Object>
+	stringTwo:		<Object>
+
+
+
+"
 Class {
 	#name : #HammingDistanceCalculator,
 	#superclass : #Object,
@@ -11,16 +28,15 @@ Class {
 
 { #category : #initialization }
 HammingDistanceCalculator >> calculateHDBetween: string1 and: string2 [
-	| hd |
+
 	stringOne := string1.
 	stringTwo := string2.
 	self checkStringsAreSameSize.
-	hd := 0.
+	self hammingDistance: 0.
 	1 to: stringOne size do: [ :i | 
 		(stringOne at: i) = (stringTwo at: i)
-			ifFalse: [ hd := hd + 1 ] ].
-	hammingDistance := hd.
-	^ hammingDistance 
+			ifFalse: [ hammingDistance := hammingDistance + 1 ] ].
+	^ hammingDistance
 
 
 
@@ -37,6 +53,16 @@ HammingDistanceCalculator >> checkStringsAreSameSize [
 
 	stringOne size = stringTwo size 
 		ifFalse: [ ErrorDialogWindow error: 'strings need to be the same size' ] 
+]
+
+{ #category : #initialization }
+HammingDistanceCalculator >> hammingDistance [
+	^ hammingDistance 
+]
+
+{ #category : #initialization }
+HammingDistanceCalculator >> hammingDistance: integer [
+	hammingDistance := integer
 ]
 
 { #category : #initialization }
