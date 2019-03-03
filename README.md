@@ -11,5 +11,7 @@ Example:
 
 Rethink my instance variables (do I need hammingDistance?)
 
+Make strings lowercased 
+
 Write tests
 
