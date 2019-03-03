@@ -8,6 +8,7 @@ Example:
 
 
 ---TO DO ---
+
 Rethink my instance variables (do I need hammingDistance?)
 
 Write tests
