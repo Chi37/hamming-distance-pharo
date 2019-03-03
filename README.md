@@ -3,4 +3,12 @@ Hamming Distance exercism exercise in Pharo. Compares two "DNA" strings and coun
 
 Example:
 'abcdefgh' and 'bbclefgj' would return 3 as the hamming distance. 
-                ^  ^   ^
+
+
+
+
+---TO DO ---
+Rethink my instance variables (do I need hammingDistance?)
+
+Write tests
+
