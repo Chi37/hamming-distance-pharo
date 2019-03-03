@@ -9,11 +9,6 @@ Class {
 	#category : #Hamming
 }
 
-{ #category : #operations }
-HammingDistanceCalculator class >> calculateHD [
-	self shouldBeImplemented.
-]
-
 { #category : #initialization }
 HammingDistanceCalculator >> calculateHDBetween: string1 and: string2 [
 	| hd |
