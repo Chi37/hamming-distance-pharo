@@ -28,24 +28,16 @@ Class {
 
 { #category : #initialization }
 HammingDistanceCalculator >> calculateHDBetween: string1 and: string2 [
-
-	stringOne := string1.
-	stringTwo := string2.
-	self checkStringsAreSameSize.
-	self hammingDistance: 0.
-	1 to: stringOne size do: [ :i | 
-		(stringOne at: i) = (stringTwo at: i)
-			ifFalse: [ hammingDistance := hammingDistance + 1 ] ].
-	^ hammingDistance
-
-
-
-
-	" ORIGINAL CODE:"
-	"matchingChar := stringOne howManyMatch: stringTwo.
-	hammingDist := stringOne size - matchingChar.
-	hammingDistance := hammingDist.
-	^ hammingDistance"
+	| distance |
+	string1 size ~= string2
+		ifTrue: [ ^ self error: 'two strings must have the same length' ].
+	distance := 0.
+	string1
+		with: string2
+		do: [ :char1 :char2 | 
+			char1 ~= char2
+				ifTrue: [ distance := distance + 1 ] ].
+	^ distance
 ]
 
 { #category : #initialization }
